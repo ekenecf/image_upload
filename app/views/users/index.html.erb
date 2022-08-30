@@ -3,7 +3,7 @@
 <% @users.each do |user|%>
 
 <h2>Welcome <%= user.name %>! </h2>
-<%= cl_image_tag(user.photo, width: 300, height: 200, alt:'user image') %>
+<%= image_tag user.photo.url, width: 300, height: 200 %>
 
 <%= link_to "create user", new_user_path(@user) %>
 <% end%>

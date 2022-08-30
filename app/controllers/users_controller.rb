@@ -19,12 +19,12 @@ class UsersController < ApplicationController
         flash[:notice] = 'user created successfully.'
         redirect_to users_path(created_user)
       else
-        flash[:error] = 'group create unsucessful!'
+        flash[:error] = 'user create unsucessful!'
         @user = created_user
         render :new
       end
     end
-  
+
     def destroy
       @user.destroy
       redirect_to users_path(@user), notice: "Successfully deleted #{@user.name}."
