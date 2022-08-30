@@ -1,0 +1,9 @@
+<h1>All users </h1>
+
+<% @users.each do |user|%>
+
+<h2>Welcome <%= user.name %>! </h2>
+<%= image_tag user.photo.url, width: 300, height: 200 %>
+
+<%= link_to "create user", new_user_path(@user) %>
+<% end%>
