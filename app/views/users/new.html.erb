@@ -1,0 +1,11 @@
+<h1>Create new group</h1>
+<%= form_with model: @user, url: users_path, method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+
+  <%= f.label :photo %>
+  <%= f.file_field :photo, direct_upload: true %>
+
+  <%= f.submit "Save user" %>
+<% end %>
