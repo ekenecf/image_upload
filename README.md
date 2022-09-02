@@ -45,7 +45,7 @@ gem ‘carrierwave’
 gem ‘cloudinary’
 then bundle install
 
-in config/initializers/cloudinary.rb, add;
+## in config/initializers/cloudinary.rb, add;
 
 Cloudinary.config do |config|
   config.cloud_name = ENV['CLOUDINARY_NAME']
@@ -71,8 +71,7 @@ production:
   Generate carrierWave uploader
   rails g uploader image
 
-
-In image_uploader.rb comment out the storage and store_dir lines since we are going to use Cloudinary.
+## In image_uploader.rb comment out the storage and store_dir lines since we are going to use Cloudinary.
 
 class ImageUploader < CarrierWave::Uploader::Baseinclude 
   Cloudinary::CarrierWave
@@ -84,7 +83,7 @@ class ImageUploader < CarrierWave::Uploader::Baseinclude
  end
 end
 
-Finally to the user model, add
+## Finally to the user model, add
  mount_uploader :image, ImageUploader
 
- Test with hopscotch.io or postman to see
+Test with hopscotch.io or postman to see
